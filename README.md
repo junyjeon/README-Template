@@ -56,29 +56,51 @@
 
 ## 프로젝트 구조
   ```
-  project_root/
+  project/
   |-- src/
-  |   |-- components/
-  |   |-- pages/
-  |   `-- styles/
-  |-- public/
-  `-- package.json
+  |   |-- main.rs
+  |   `-- lib.rs
+  |-- tests/
+  |-- examples/
+  |-- Cargo.toml
+  `-- Cargo.lock
   ```
 
 ## 개발자 가이드
 
-### 아키텍쳐
+### 아키텍처
+  - 이 프로젝트는 클린 아키텍처(Clean Architecture) 원칙을 따르고 있습니다.
+  - 프로젝트는 다음과 같은 모듈로 구성되어 있습니다:
+    - `domain`: 비즈니스 로직과 도메인 모델을 포함합니다.
+    - `application`: 유스케이스와 애플리케이션 서비스를 포함합니다.
+    - `infrastructure`: 외부 의존성과 구현 세부 사항을 포함합니다.
+    - `presentation`: UI 로직과 프레젠테이션 레이어를 포함합니다.
+  - 의존성 방향은 항상 내부 모듈에서 외부 모듈로 향하도록 합니다.
 
 ### 코드 스타일 가이드라인
-  - 프로젝트는 ESLint와 Prettier를 사용하여 코드 스타일을 관리합니다. 설정 파일을 참고해주세요.
+  - 이 프로젝트는 rustfmt를 사용하여 코드 스타일을 관리합니다. 설정 파일(`rustfmt.toml`)을 참고해주세요.
+  - 코드 스타일 규칙:
+    - 들여쓰기는 4칸의 공백을 사용합니다.
+    - 함수와 메서드 이름은 snake_case를 사용합니다.
+    - 구조체와 열거형 이름은 PascalCase를 사용합니다.
+    - 상수와 정적 변수 이름은 SCREAMING_SNAKE_CASE를 사용합니다.
+    - 줄 길이는 100자를 넘지 않도록 합니다.
+<!--  - 프로젝트는 ESLint와 Prettier를 사용하여 코드 스타일을 관리합니다. 설정 파일을 참고해주세요. -->
 
 ### 디자인 패턴
 
 ### 개발 환경 설정법
-  - Node.js와 npm이 설치되어 있어야 합니다. `.env` 파일에 필요한 환경 변수를 설정하세요.
+  - Rust 설치:
+    - [Rust 공식 웹사이트](https://www.rust-lang.org/)에서 Rust를 설치합니다.
+  - IDE 설정:
+    - [Visual Studio Code](https://code.visualstudio.com/)와 [Rust 확장 팩](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-extension-pack)을 사용하는 것을 추천합니다.
+    - `settings.json`에 다음 설정을 추가하여 rustfmt를 사용하도록 합니다:
+      ```json
+      "rust-analyzer.checkOnSave.command": "clippy",
+      "rust-analyzer.
 
 ## 성능 지표
-  - React 프로젝트의 경우, [React Profiler](링크)를 사용하여 컴포넌트의 렌더링 성능을 분석할 수 있습니다.
+<!--  - React 프로젝트의 경우, [React Profiler](링크)를 사용하여 컴포넌트의 렌더링 성능을 분석할 수 있습니다. -->
   - Rust 프로젝트의 경우, [cargo bench](링크)를 사용하여 코드의 성능을 측정할 수 있습니다.
   - 벤치마크 실행:
      ```bash
@@ -109,7 +131,8 @@
   - 각 릴리스는 GitHub의 태그와 릴리스 기능을 사용하여 관리됩니다.
 
 ## 기술 스택
-  -
+  - Rust (Rust 버전 명시)
+   - (사용된 주요 Rust 크레이트 나열)
   - 프론트엔드: React, Vue.js, Angular 등
   - 백엔드: Node.js, Django, Spring Boot 등
   - 데이터베이스: MySQL, PostgreSQL, MongoDB 등
