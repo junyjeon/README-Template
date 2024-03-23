@@ -49,10 +49,14 @@
   ```
 
 ## 테스트
-  - 유닛 테스트 :
-  ```zsh
-  cargo test
-  ```
+   - 유닛 테스트 실행:
+     ```bash
+     cargo test
+     ```
+   - 통합 테스트 실행:
+     ```bash
+     cargo test --test integration_tests
+     ```
 
 ## 프로젝트 구조
   ```
@@ -107,16 +111,6 @@
      cargo bench
      ```
   - (벤치마크 결과 요약)
-
-## 테스트
-  - 유닛 테스트 실행:
-     ```bash
-     cargo test
-     ```
-  - 통합 테스트 실행:
-     ```bash
-     cargo test --test integration_tests
-     ```
 
 ## 기여하기
   - Issues: [이슈 트래커](이슈 트래커 URL)에서 버그 리포트 또는 기능 요청을 해주세요.
